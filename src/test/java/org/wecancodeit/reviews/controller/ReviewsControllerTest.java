@@ -5,6 +5,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -27,7 +28,17 @@ public class ReviewsControllerTest {
 
 	@Test
 	public void shouldReturnReviewsTemplateWhenAccessingReviews() throws Exception {
-		mockMvc.perform(get("/students")).andExpect(view().name("students"));
+		mockMvc.perform(get("/reviews")).andExpect(view().name("reviews"));
+	}
+
+	@Test
+	public void shouldBeOKWhenAccessingReview() throws Exception {
+		mockMvc.perform(get("/reviews/16100")).andExpect(status().isOk());
+	}
+
+	@Test
+	public void shouldReturReviewTemplateWhenAccessingReview() throws Exception {
+		mockMvc.perform(get("/reviews/35100")).andExpect(view().name("review"));
 	}
 
 }
