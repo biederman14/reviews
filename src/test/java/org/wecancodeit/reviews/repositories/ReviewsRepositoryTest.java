@@ -17,14 +17,12 @@ public class ReviewsRepositoryTest {
 	@Test
 	public void shouldAcceptReviews() {
 		// arrange
-		Review yosemite = new Review(31100L, "Yosemite",
-				"http://www.trbimg.com/img-59cc4419/turbine/ct-yosemite-rock-fall-20170927", "", "", "", "");
+		Review dijon = new Review(30200L, "", "", "", "", "", "");
 		// Act
 		int repoSizeBeforeAdding = reviewRepo.size();
-		reviewRepo.add(yosemite);
+		reviewRepo.add(dijon);
 		int repoSizeAfterAdding = reviewRepo.size();
 		assertThat(repoSizeAfterAdding, is(equalTo(repoSizeBeforeAdding + 1)));
-
 	}
 
 	@Test

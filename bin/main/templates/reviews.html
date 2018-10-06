@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Reviewsd</title>
+	<title>Reviews</title>
 </head>
 <body>
 	<header>
 	<h1>Reviews</h1>
 	<nav>
 		<ul>
-			<li><a href="/reviews"> All Revies</a></li>
-			<li th:each="review : ${reviews}"><a th:href="|/reviews/${review.title}|" th:text="${review.title}">Review</a></li>
+			<li><a href="/reviews"> All Reviews</a></li>
+			<li th:each="review : ${reviews}"><a th:href="|/reviews/${review.id}|" th:text="${review.title}">Review</a></li>
 		</ul>
 	</nav>
 	</header>
 	<main>
 		<ul>
-			<li th:each="review : ${reviews}"><a th:href="|/reviews/${review.title}|" th:text="${review.title}">Review</a></li>
+			<li th:each="review : ${reviews}"><a th:href="|/reviews/${review.id}|" th:text="${review.title}">Review</a></li>
 		</ul>
 	</main>
 </body>
